@@ -15,7 +15,7 @@ function App() {
   const [array, setArray] = React.useState([
     {number:1, name: "спорт", complited :false},
     {number:2, name: "учёба",complited :false},
-    {number:3, name: "wolk",complited :false}
+    {number:3, name: "прогулки",complited :false}
   ])
 
   function onChangeDo (id) {
