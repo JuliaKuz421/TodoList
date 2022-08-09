@@ -24,22 +24,23 @@ function Plan ({object, index, onChange}) {
    
     const classes =[]
 
-    if (object.complited) {
+    if (object.completed) {
         classes.push('done')
+        console.log(object.id);
     }
 
     return (
-        <li className="list" style={style.li}>
+        <li classtitle="list" style={style.li}>
             <span className={classes.join(" ")}>
             <input 
             style={style.input} 
             type="checkbox" 
-            onChange={() => onChange(object.number) }/>
+            onChange={() => onChange(object.id) }/>
 
-            <strong>{index + 1}</strong> &nbsp; {object.name}
+            <strong>{index + 1}</strong> &nbsp; {object.title}
             </span>
            
-            <button className="rm" onClick={() => valueValue(object.number)}>&times;</button>
+            <button className="rm" onClick={() => valueValue(object.id)}>&times;</button>
             
         </li>
     )
