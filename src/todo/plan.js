@@ -35,6 +35,7 @@ function Plan ({object, index, onChange}) {
             <input 
             style={style.input} 
             type="checkbox" 
+            className="input"
             onChange={() => onChange(object.id) }/>
 
             <strong>{index + 1}</strong> &nbsp; {object.title}

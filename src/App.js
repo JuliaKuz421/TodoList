@@ -5,7 +5,8 @@ import AddTodo from "./todo/add.js"
 import Loader from "./loader.js"
 
 const style = {
-  h :{color: "pink"}
+  h :{color: "pink",
+      marginLeft: '6rem'}
 }
 
 
@@ -17,7 +18,14 @@ function App() {
   const[loading, setLoading] = useState(true)
 
   useEffect(() => {
-    fetch('https://jsonplaceholder.typicode.com/todos?_limit=50')
+    fetch(
+      'todo.json',
+      {
+        headers : {
+          'Accept': 'application/json'
+        }
+      }
+    )
       .then(response => response.json())
       .then(array => {
         setTimeout(() => {
@@ -56,8 +64,8 @@ function App() {
     <Contexto.Provider value={{valueValue : remuveTodo}}>
     <div className="wrapper" >
       <h1 style={style.h}>Список дел</h1>
-      <AddTodo onCreate={addTodo}/>
-      {loading && <Loader/> }
+      <div className="add"><AddTodo onCreate={addTodo}/></div>
+      <div className="loader">{loading && <Loader/> }</div>
       {array.length ? (
         <List array={array} onChange={onChangeDo} />
         ) : loading? null : (<p>not todos</p>
