@@ -1,28 +1,45 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 import List from "./todo/list.js"
 import Contexto from "./context.js"
 import AddTodo from "./todo/add.js"
-
+import Loader from "./loader.js"
 
 const style = {
-  h :{color: "pink"}
+  h :{color: "pink",
+      marginLeft: '6rem'}
 }
 
 
 
 function App() {
 
-  const [array, setArray] = React.useState([
-    {number:1, name: "спорт", complited :false},
-    {number:2, name: "учёба",complited :false},
-    {number:3, name: "wolk",complited :false}
-  ])
+  const [array, setArray] = React.useState([])
+
+  const[loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    fetch(
+      'todo.json',
+      {
+        headers : {
+          'Accept': 'application/json'
+        }
+      }
+    )
+      .then(response => response.json())
+      .then(array => {
+        setTimeout(() => {
+        setArray(array)
+        setLoading(false)
+      },2000)
+      })
+  },[])
 
   function onChangeDo (id) {
     setArray(
       array.map(element => {
-        if (id === element.number) {
-          element.complited = !element.complited
+        if (id === element.id) {
+          element.completed = !element.completed
         }
         return element
       })
@@ -30,16 +47,16 @@ function App() {
   }
 
   function remuveTodo(id) {
-    setArray(array.filter((element) => element.number !== id))
+    setArray(array.filter((element) => element.id !== id))
     console.log("remuveTodo " + id)
   }
 
   function addTodo (value) {
       console.log(value)
       setArray(array.concat([{
-        name: value,
-        number: Date.now(),
-        complited: false
+        title: value,
+        id: Date.now(),
+        completed: false
       }]))
   }
   
@@ -47,12 +64,12 @@ function App() {
     <Contexto.Provider value={{valueValue : remuveTodo}}>
     <div className="wrapper" >
       <h1 style={style.h}>Список дел</h1>
-      <AddTodo onCreate={addTodo}/>
+      <div className="add"><AddTodo onCreate={addTodo}/></div>
+      <div className="loader">{loading && <Loader/> }</div>
       {array.length ? (
         <List array={array} onChange={onChangeDo} />
-        ) : (
-        <p>not todos</p>
-        )}
+        ) : loading? null : (<p>not todos</p>
+      )}
       
     </div></Contexto.Provider>
   )

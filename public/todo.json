@@ -1,0 +1,38 @@
+[
+    {
+      "userId": 1,
+      "id": 1,
+      "title": "Фотосессия",
+      "completed": false
+    },
+    {
+      "userId": 1,
+      "id": 2,
+      "title": "Сходить в ресторан",
+      "completed": false
+    },
+    {
+      "userId": 1,
+      "id": 3,
+      "title": "Съездить в галерею",
+      "completed": false
+    },
+    {
+      "userId": 1,
+      "id": 4,
+      "title": "Покататься на сапах",
+      "completed": false
+    },
+    {
+      "userId": 1,
+      "id": 5,
+      "title": "оформить вид на жительство",
+      "completed": false
+    },
+    {
+      "userId": 1,
+      "id": 6,
+      "title": "отдохнуть во Франции",
+      "completed": false
+    }
+]

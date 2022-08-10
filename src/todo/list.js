@@ -5,7 +5,7 @@ import Plan from "./plan.js"
 function list (props) {
   return ( 
     props.array.map(function (object, index) {
-        return (<Plan object={object} key={object.number} index={index} onChange={props.onChange}/>)
+        return (<Plan object={object} key={object.id} index={index} onChange={props.onChange}/>)
     })
   )
 }
