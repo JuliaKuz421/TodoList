@@ -2,37 +2,31 @@
     {
       "userId": 1,
       "id": 1,
-      "title": "Фотосессия",
+      "title": "Тренироваться 2 раза в неделю",
       "completed": false
     },
     {
       "userId": 1,
       "id": 2,
-      "title": "Сходить в ресторан",
+      "title": "Отправить посылку",
       "completed": false
     },
     {
       "userId": 1,
       "id": 3,
-      "title": "Съездить в галерею",
+      "title": "Экскурсия для Лены",
       "completed": false
     },
     {
       "userId": 1,
       "id": 4,
-      "title": "Покататься на сапах",
+      "title": "Погулять по Стамбулу",
       "completed": false
     },
     {
       "userId": 1,
       "id": 5,
-      "title": "оформить вид на жительство",
-      "completed": false
-    },
-    {
-      "userId": 1,
-      "id": 6,
-      "title": "отдохнуть во Франции",
+      "title": "Искупаться в море",
       "completed": false
     }
 ]

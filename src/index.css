@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #f0ecec;
 }
 
 code {
@@ -23,7 +24,7 @@ code {
 }
 
 .rm {
-  background-color: red;
+  background-color: rgba(255, 0, 0, 0.832);
   border-radius: 50%;
   color: white;
   border: none;
