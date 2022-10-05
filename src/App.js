@@ -63,7 +63,7 @@ function App() {
   return (
     <Contexto.Provider value={{valueValue : remuveTodo}}>
     <div className="wrapper" >
-      <h1 style={style.h}>Список дел</h1>
+      <h1 style={style.h}>To do list</h1>
       <div className="add"><AddTodo onCreate={addTodo}/></div>
       <div className="loader">{loading && <Loader/> }</div>
       {array.length ? (
