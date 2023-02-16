@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react"
 import List from "./todo/list.js"
-import Contexto from "./context.js"
+import Context from "./context.js"
 import AddTodo from "./todo/add.js"
 import Loader from "./loader.js"
 
@@ -61,7 +61,7 @@ function App() {
   }
   
   return (
-    <Contexto.Provider value={{valueValue : remuveTodo}}>
+    <Context.Provider value={{valueValue : remuveTodo}}>
     <div className="wrapper" >
       <h1 style={style.h}>Список дел</h1>
       <div className="add"><AddTodo onCreate={addTodo}/></div>
@@ -71,7 +71,7 @@ function App() {
         ) : loading? null : (<p>not todos</p>
       )}
       
-    </div></Contexto.Provider>
+    </div></Context.Provider>
   )
 }
 
